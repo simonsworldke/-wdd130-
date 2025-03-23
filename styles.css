@@ -1,0 +1,40 @@
+/* Limit the width of the main element */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Styling the aside element */
+  aside {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+  }
+  
+  /* Style the image inside aside */
+  aside img {
+    width: 200px;
+    height: auto;
+  }
+  
+  /* Update profile image inside main */
+  main img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Change the padding of paragraphs to 0 */
+  p {
+    padding: 0;
+  }
+  
+  /* Styling for footer */
+  footer {
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    text-align: center;
+  }
+  
