@@ -1,0 +1,121 @@
+/* Define CSS variables in the :root selector */
+:root {
+    --primary-color: #5BC0EB;
+    --secondary-color: #FDE74C;
+    --background-color: #9BC53D;
+    --text-color: #211A1E;
+}
+
+/* General Reset */
+body, h1, h2, p, img, nav, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    display: block;
+    /* I have reset the width from 100% to 10% because it was covering other items */
+    width: 10%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    color: white;
+}
+
+article {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: 80%;
+    color: white;
+    text-align: left;
+}
+
+article img {
+    float: right;
+    margin-left: 20px;
+    width: 150px;
+    height: auto;
+}
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer nav.sociallinks a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+footer nav.sociallinks img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+footer nav.sociallinks a:hover img {
+    transform: scale(1.1);
+}
