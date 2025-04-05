@@ -4,10 +4,11 @@
     --secondary-color: #FDE74C;
     --background-color: #9BC53D;
     --text-color: #211A1E;
+    --footer-bg-color: #0077b6;
 }
 
 /* General Reset */
-body, h1, h2, p, img, nav, ul {
+body, h1, h2, p, img, nav, ul, figure {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,43 +20,65 @@ body {
     color: var(--text-color);
 }
 
+/* Header Styles */
 header {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
     background-color: var(--primary-color);
     padding: 20px;
     text-align: center;
 }
 
-header img {
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
     max-width: 200px;
     height: auto;
 }
 
+header h1 {
+    font-size: 2rem;
+    color: white;
+    margin-left: 15px;
+}
+
+nav {
+    text-align: right;
+}
+
 nav ul {
-    list-style-type: none;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
+/* Hero Section */
 .hero {
     position: relative;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .hero img {
-    display: block;
-    /* I have reset the width from 100% to 10% because it was covering other items */
-    width: 10%;
+    width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .hero h1 {
@@ -66,6 +89,7 @@ nav ul li a {
     font-family: 'Merriweather', serif;
     font-size: 3rem;
     color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 article {
@@ -87,6 +111,7 @@ article img {
     height: auto;
 }
 
+/* Section Styling */
 section {
     padding: 40px;
     text-align: center;
@@ -98,24 +123,107 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Adventure Images Section */
+.adventure-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.adventure-images figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adventure-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.adventure-images figcaption {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Footer Styles */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--footer-bg-color);
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-footer nav.sociallinks a {
-    margin: 0 15px;
+footer p {
+    margin-bottom: 10px;
+}
+
+footer nav.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer nav.social-links a {
     display: inline-block;
 }
 
-footer nav.sociallinks img {
+footer nav.social-links img {
     width: 40px;
     height: auto;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
-footer nav.sociallinks a:hover img {
+footer nav.social-links a:hover img {
     transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .adventure-images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer nav.social-links {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    article {
+        width: 90%;
+        padding: 15px;
+    }
+
+    footer nav.social-links {
+        gap: 10px;
+    }
 }
